@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON활용갤러리</title>
+    <style>
+        #wrapper {
+            width: 600px;
+            height: 800px;
+            background: whitesmoke;
+            margin: auto;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            background: rgb(236, 234, 210);
+            text-align: center;
+            font-size: 30px;
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+
+        #photo {
+            width: 100%;
+            height: 500px;
+            background: whitesmoke;
+            text-align: center;
+        }
+
+        #msg {
+            width: 100%;
+            height: 100px;
+            background: rgb(228, 225, 199);
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 20px;
+        }
+
+        #comment {
+            font-size: 30px;
+        }
+
+        #footer {
+            width: 100%;
+            height: 100px;
+            background: rgb(213, 213, 238);
+            box-sizing: border-box;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        #footer button {
+            margin: 20px;
+        }
+    </style>
+    <script>
+        let header;
+        let photo, pic;
+        let msg, comment;
+        let footer;
+        let photoList = [];
+        let flag = false;
+        let d = {
+            "name": "닥터 차정숙",
+            "poster": "../images/top10/n1.png",
+            "comment": "넷플릭스 오늘의 한국, 1위"
+        }
+        let d1 = {
+            "name": "나쁜엄마",
+            "poster": "../images/top10/n2.png",
+            "comment": "넷플릭스 오늘의 한국, 2위"
+        }
+        let d2 = {
+            "name": "택배기사",
+            "poster": "../images/top10/n3.png",
+            "comment": "넷플릭스 오늘의 한국, 3위"
+        }
+        let d3 = {
+            "name": "보라!데보라",
+            "poster": "../images/top10/n4.png",
+            "comment": "넷플릭스 오늘의 한국, 4위"
+        }
+        let d4 = {
+            "name": "구미호뎐",
+            "poster": "../images/top10/n5.png",
+            "comment": "넷플릭스 오늘의 한국, 5위"
+        }
+        let d5 = {
+            "name": "하트시그널",
+            "poster": "../images/top10/n6.png",
+            "comment": "넷플릭스 오늘의 한국, 6위"
+        }
+        let d6 = {
+            "name": "진짜가 나타났다!",
+            "poster": "../images/top10/n7.png",
+            "comment": "넷플릭스 오늘의 한국, 7위"
+        }
+        let d7 = {
+            "name": "FUBAR",
+            "poster": "../images/top10/n8.png",
+            "comment": "넷플릭스 오늘의 한국, 8위"
+        }
+        let d8 = {
+            "name": "가면의 여왕",
+            "poster": "../images/top10/n9.png",
+            "comment": "넷플릭스 오늘의 한국, 9위"
+        }
+        let d9 = {
+            "name": "용감한 형사들",
+            "poster": "../images/top10/n10.png",
+            "comment": "넷플릭스 오늘의 한국, 10위"
+        }
+        
+        function showContent() {
+        photoList.push(d, d1, d2, d3, d4, d5, d6, d7, d8, d9);
+            if (flag) {
+                for (let i = 0; i < photoList.length; i++) {
+                    let p = photoList[i];
+                    header.innerText = p.name;
+                    pic.src = p.poster;
+                    comment.innerText = p.comment;
+                } 
+            }
+        }
+
+        function init() {
+            header = document.getElementById("header");
+            photo = document.getElementById("photo");
+            pic = document.getElementById("pic");
+            msg = document.getElementById("msg");
+            comment = document.getElementById("comment");
+            footer = document.getElementById("footer");
+        }
+
+        addEventListener("load", function () {
+            init();
+            showContent();
+            let prev=document.getElementById("bt_prev").addEventListener("click", function(){
+                
+            });
+            let next=document.getElementById("bt_next").addEventListener("click", function(){
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="photo">
+            <img id="pic" width="300px" height="500px">
+        </div>
+        <div id="msg">
+            <div id="comment">comment</div>
+        </div>
+        <div id="footer">
+            <button id="bt_prev">◀</button>
+            <button id="auto">Auto on/off</button>
+            <button id="bt_next">▶</button>
+        </div>
+    </div>
+</body>
+
+</html>
